@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header">
+      <h2>Front-end take-home assignment</h2>
+    </div>
+    <div class="main-container">
+      <div class="wrapper">
+        <div class="carousel"></div>
+        <div class="description">
+          <h3>Preamble</h3>
+          <p>
+            We know take-home tests are lame and we greatly appreciate you doing
+            this; we've tried to structure this one so that it's
+          </p>
+
+          <ul>
+            <li>Not too much of your time</li>
+            <li>Possibly entertaining</li>
+          </ul>
+          <p>
+            We know you''re busy; your submission will not be evaluated on
+            length of time spent, nor is there a hard time limit. It''s designed
+            to let you show off how you code and would work with the stack we've
+            got. Please feel free to ask questions by replying to the assignment
+            email and we'll be happy to answer!
+          </p>
+        </div>
+        <div class="description">
+          <h3>The Assignment</h3>
+          <div class="main-tips">
+            <ul>
+              <div class="danger">
+                <ul>
+                  <li>Do not use any 3rd-party library.</li>
+                  <li>Do not change index.html.</li>
+                  <li>Do not change index.js.</li>
+                  <li>
+                    Create a dialog component with className of
+                    <span class="code">'ls-dialog'</span>.
+                  </li>
+                  <li>
+                    Create a popover component with className of
+                    <span class="code">'ls-popover'</span>.
+                  </li>
+                  <li>
+                    You can write your JavaScript code in main.js and your CSS
+                    code in index.css
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+          <p class="tip">
+            Please try completing the assignment without removing and/or
+            changing the existing code. You can add new code.
+          </p>
+          <ul>
+            <li>
+              Inside the page, there is a button. On click, a dialog should be
+              shown with the following criteria:
+            </li>
+            <div class="notices">
+              <ul>
+                <li>It should be opened in the center of screen</li>
+                <li>
+                  It should have a backdrop with a dark color:
+                  <span class="code">rgba(0, 0, 0, 0.32)</span>
+                </li>
+                <li>
+                  The document body intentionally forces a vertical scroll. You
+                  should handle the scroll when the dialog is opened. When the
+                  dialog is opened, the content behind it should not be
+                  scrollable.
+                </li>
+                <li>
+                  When the user clicks outside of the dialog, it should be
+                  automatically dismissed and closed but when clicked inside, it
+                  should remain open.
+                </li>
+              </ul>
+            </div>
+          </ul>
+          <ul>
+            <li>
+              Inside the dialog there is a button. On click, a popover should be
+              shown with the following criteria:
+            </li>
+            <div class="notices">
+              <ul>
+                <li>It has no dark backdrop.</li>
+                <li>It should be dismissed when clicked outside of it.</li>
+                <li>
+                  It has a triangle pointer on top implemented using CSS only.
+                </li>
+                <li>It has an input where user can enter a value.</li>
+                <li>
+                  It has two buttons: "Close" which dismisses the popover and
+                  "OK" which accepts the value and shows it inside a new dialog
+                  opened on top of everything.
+                </li>
+              </ul>
+            </div>
+          </ul>
+          <div class="step-container">
+            <div class="steps">
+              <div class="step step1">
+                <div class="increment">Step one</div>
+              </div>
+
+              <div class="step step2">
+                <div class="increment">Step two</div>
+              </div>
+
+              <div class="step step3">
+                <div class="increment">Step three</div>
+              </div>
+
+              <div class="step step4">
+                <div class="increment">Step four</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="description">
+          <h3>Assignment submission</h3>
+          <p>
+            While there's no limit, to be considerate of your time, we ask you
+            not to spend more than 4-5 hours working on the project. Whatever
+            you can accomplish in that time would be enough for us to discuss in
+            a code review session.
+          </p>
+          <p>
+            The goal of this assignment is to evaluate how you would solve a
+            problem, how you would architect and design it and how clean your
+            code is. Completeness is not an objective. You can demonstrate the
+            above with a project that is not finished yet but is a good / solid
+            start of some greatness!
+          </p>
+          <p>
+            When you're happy with what you have, send back a ZIP archive of
+            your work by replying to assignment email and we'll get back to you
+            withing 24-48 hours for next steps!
+          </p>
+          <p>Good luck!</p>
+        </div>
+        <div>
+          <button id="open-dialog-button" style="width: 200px; margin: 50px">
+            Open Dialog
+          </button>
+
+          <div id="dlg" class="ls-dialog" style="width: 500px; height: 200px">
+            <div class="dialog-body" style="overflow: auto">
+              <div style="height: 300px">
+                <div style="margin-top: 70px; margin-left: auto; width: 315px">
+                  <span>Show popover</span>
+                  <a href="#" id="popover-button" style="display: inline-block">
+                    Click Me
+                  </a>
+                </div>
+                <div
+                  id="popover"
+                  class="ls-popover"
+                  style="width: 240px; height: 150px"
+                >
+                  <label class="label">Enter your name</label>
+                  <input id="input" class="input" />
+                  <div class="action-buttons">
+                    <button id="successButton" class="success">OK</button>
+                    <button id="cancelButton" class="cancel">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dialog-actions">
+              <button id="close-dialog-button">Close</button>
+            </div>
+          </div>
+
+          <div
+            id="dlgResult"
+            class="ls-dialog dialog-confirmation"
+            style="width: 320px"
+          >
+            <div>
+              Tour name is <span id="selectedName"></span> and was saved
+              successful
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
